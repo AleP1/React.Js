@@ -1,6 +1,10 @@
-.App-header{
+.App__nav{
     display: flex;
     flex-direction: row;
+    .logo{
+        width: 130px;
+        border-radius: 50%;
+    }
     lu{
         display: flex;
         padding: 10px;

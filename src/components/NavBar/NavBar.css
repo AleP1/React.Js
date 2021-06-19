@@ -1,4 +1,4 @@
-.App-header {
+.App__nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,14 +8,19 @@
           flex-direction: row;
 }
 
-.App-header lu {
+.App__nav .logo {
+  width: 130px;
+  border-radius: 50%;
+}
+
+.App__nav lu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 10px;
 }
 
-.App-header lu li {
+.App__nav lu li {
   list-style: none;
   padding: 10px;
 }

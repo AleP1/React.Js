@@ -1,20 +1,23 @@
 
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
 function App() {
+
+  let saludo = `Hola! soy Ale Piñeiro, este es mi promer proyecto con React.JS`
+
   return (
 
     <div className="App">
-
       <header className="App-header">
-        
         <NavBar />
-      </header>
-      <div>
+
+        <div>
           <h1>Bik0</h1>
-          <p>Alejo PIñeiro</p>
-      </div>
+        </div>
+        <ItemListContainer greeting= {saludo} />
+      </header>
     </div>
   );
 }

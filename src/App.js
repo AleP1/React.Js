@@ -6,14 +6,15 @@ function App() {
   return (
 
     <div className="App">
-      
+
       <header className="App-header">
-      <div>
-        <h1>Bik0</h1>
-        <p>Alejo PIñeiro</p>
-      </div>
+        
         <NavBar />
       </header>
+      <div>
+          <h1>Bik0</h1>
+          <p>Alejo PIñeiro</p>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.App-header{
+    display: flex;
+    flex-direction: row;
+    lu{
+        display: flex;
+        padding: 10px;
+        li{
+            list-style: none;
+            padding: 10px;
+        }
+    }
+}

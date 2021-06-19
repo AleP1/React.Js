@@ -1,0 +1,22 @@
+.App-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.App-header lu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+}
+
+.App-header lu li {
+  list-style: none;
+  padding: 10px;
+}
+/*# sourceMappingURL=NavBar.css.map */

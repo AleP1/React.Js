@@ -1,11 +1,12 @@
 
 import './App.css';
+import React, {components, useState} from 'react';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
+
 function App() {
 
-  let saludo = `Hola! soy Ale Piñeiro, este es mi promer proyecto con React.JS`
 
   return (
 
@@ -16,7 +17,7 @@ function App() {
         <div>
           <h1>Bik0</h1>
         </div>
-        <ItemListContainer greeting= {saludo} />
+        <ItemListContainer/>
       </header>
     </div>
   );

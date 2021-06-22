@@ -14,8 +14,9 @@ export function NavBar() {
             <li>Electricas</li>
             <li>Monopatines</li>
         </lu>
-        <CartWidget />        
+        <CartWidget />
       </nav>
+
     </div>
   );
 }

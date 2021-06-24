@@ -8,7 +8,7 @@ export function ItemListContainer() {
 
   return (
     <div>
-      <ItemCount onAdd={'nada'} inicial ={1} stock={10}/>
+      <ItemCount inicial ={1} stock={10}/>
     </div>
   );
 }

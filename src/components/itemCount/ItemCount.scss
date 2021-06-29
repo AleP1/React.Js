@@ -5,34 +5,19 @@ $azul: #327da8;
 }
 
 .count {
-    background-image: linear-gradient(to bottom right, lightblue, $azul);
+  background-image: linear-gradient(to bottom right, lightblue, $azul);
   border: double 5px $azul;
-  width: 50%;
-  height: 100vh;
+  width: 90%;
   @include margenes;
-  img{
-      width: 95%;
-      height: 50%;
-      border: solid 5px black;
-      overflow: hidden;
-      @include margenes;
-  }
-  label{
-      display: block;
-      @include margenes;
-  }
   .count__list{
-      width: 30%;
-      @include margenes;
+    background-color: white;
+    border: blanchedalmond 5px solid;
+    width: 80%;
+    padding: 20px;
       li {
         margin: 5px 30px;
         list-style: none;
-        button {
-          background-color: white;
-          font-size: 40px;
-          border: none;
-          margin-bottom: auto;
-        }
+        height: 20px;
       }
   }
 }
@@ -45,10 +30,10 @@ ul {
 
 
 .count__button {
-  border: solid $azul 3px;
+  background-color: white;
+  border: blanchedalmond 5px solid;
+  width: 80%;
   padding: 20px;
-  font-size: 18px;
-  width: 30%;
   background-image: linear-gradient(to bottom right, lightblue, white);
 }
 .count__button:hover {

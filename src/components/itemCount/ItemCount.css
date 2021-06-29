@@ -2,43 +2,22 @@
   background-image: -webkit-gradient(linear, left top, right bottom, from(lightblue), to(#327da8));
   background-image: linear-gradient(to bottom right, lightblue, #327da8);
   border: double 5px #327da8;
-  width: 50%;
-  height: 100vh;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.count img {
-  width: 95%;
-  height: 50%;
-  border: solid 5px black;
-  overflow: hidden;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.count label {
-  display: block;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
 }
 
 .count .count__list {
-  width: 30%;
-  margin-right: auto;
-  margin-left: auto;
+  background-color: white;
+  border: blanchedalmond 5px solid;
+  width: 80%;
+  padding: 20px;
 }
 
 .count .count__list li {
   margin: 5px 30px;
   list-style: none;
-}
-
-.count .count__list li button {
-  background-color: white;
-  font-size: 40px;
-  border: none;
-  margin-bottom: auto;
+  height: 20px;
 }
 
 ul {
@@ -51,10 +30,10 @@ ul {
 }
 
 .count__button {
-  border: solid #327da8 3px;
+  background-color: white;
+  border: blanchedalmond 5px solid;
+  width: 80%;
   padding: 20px;
-  font-size: 18px;
-  width: 30%;
   background-image: -webkit-gradient(linear, left top, right bottom, from(lightblue), to(white));
   background-image: linear-gradient(to bottom right, lightblue, white);
 }

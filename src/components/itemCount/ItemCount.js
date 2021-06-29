@@ -16,12 +16,6 @@ export function ItemCount({stock, inicial, onAdd}) {
     }
   }
 
-  const carrito = () => {
-    console.log(`agregaste ${inicial2} unidades al carrito`)
-  }
-
-
-
   return (
     <div>
         <section className="count">
@@ -30,8 +24,7 @@ export function ItemCount({stock, inicial, onAdd}) {
             <li>{inicial2}</li>
             <li><button onClick={suma}>+</button></li>
           </ul>
-          <button className="count__button" onClick={carrito}>Agregar al carrito</button>
-          
+          <button className="count__button" onClick={onAdd}>Agregar al carrito</button>
         </section>
     </div>
   );

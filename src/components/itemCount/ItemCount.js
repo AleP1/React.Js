@@ -24,7 +24,7 @@ export function ItemCount({stock, inicial, onAdd}) {
             <li>{inicial2}</li>
             <li><button onClick={suma}>+</button></li>
           </ul>
-          <button className="count__button" onClick={onAdd}>Agregar al carrito</button>
+          <button className="count__button" disabled={stock === 0} onClick={onAdd}>Agregar al carrito</button>
         </section>
     </div>
   );

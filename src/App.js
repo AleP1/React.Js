@@ -2,7 +2,7 @@
 import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-
+import { ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
           <h1>Bik0</h1>
         </div>
         <ItemListContainer/>
+        <ItemDetailContainer/>
       </header>
     </div>
   );

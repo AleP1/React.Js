@@ -1,0 +1,20 @@
+.card {
+  border: darkgrey 5px dotted;
+  width: 30%;
+  margin: 10px;
+  font-family: Proxima Nova, -apple-system, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.35;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.card .card__img {
+  background-color: white;
+  border: blanchedalmond 5px solid;
+  width: 80%;
+  height: 30%;
+  padding: 20px;
+}
+/*# sourceMappingURL=ItemDetail.css.map */

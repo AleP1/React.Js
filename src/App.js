@@ -4,11 +4,14 @@ import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
-export function Ap() {
+export default function App() {
   return (
     <Router>
-      <main>
+    <div className="App">
+     <header className="App-header">
         <NavBar/>
+     </header>
+      <main>
         <Switch>
           <Route exact path="/">
             <ItemListContainer />
@@ -21,6 +24,8 @@ export function Ap() {
           </Route>
         </Switch>
       </main>
+      
+    </div>
     </Router>
   );
 }
@@ -28,8 +33,7 @@ export function Ap() {
 //function App() {
   //return (
 
-    //<div className="App">
-     // <header className="App-header">
+
       //  <NavBar />
 
       //  <div>
@@ -37,8 +41,7 @@ export function Ap() {
       //  </div>
       //  <ItemListContainer/>
       //  <ItemDetailContainer />
-     // </header>
-    //</div>
+     // 
  // );
 //}
 

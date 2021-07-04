@@ -7,15 +7,13 @@ export const ItemListContainer =()=>{
 
     const [catalogo, setCatalogo] = useState([])
 
-  const prod = catalogoJson
 
     useEffect(()=>{
 
         const nuevaPromesa = new Promise((res, rej)=>{
-
-            setTimeout(()=>{
-                res(prod)
-            },2000)
+            setTimeout(() => {
+                res (catalogoJson)
+            }, 2000)
         })
         nuevaPromesa.then((res)=>{
             console.log(res)
@@ -38,6 +36,4 @@ export const ItemListContainer =()=>{
         </>
 
     )
-
-
 }

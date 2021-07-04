@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Bicicleta",
     "price": "$50000",
-    "description": "Es una mountain bike",
+    "description": "Es una bici plegable",
     "pictureUrl": "https://falabella.scene7.com/is/image/FalabellaAR/2634820_1?wid=800&hei=800&qlt=70",
     "categotyId": "bicicletas",
     "stock": 3

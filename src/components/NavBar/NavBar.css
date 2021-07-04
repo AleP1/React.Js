@@ -6,6 +6,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 30px;
 }
 
 .App__nav .logo {
@@ -13,15 +20,25 @@
   border-radius: 50%;
 }
 
-.App__nav lu {
+.App__nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 10px;
 }
 
-.App__nav lu li {
+.App__nav li {
   list-style: none;
   padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: bolt, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+
+.App__nav .nav__link {
+  text-decoration: none;
+  color: peru;
+  font-size: 16px;
+  font-family: bold;
 }
 /*# sourceMappingURL=NavBar.css.map */

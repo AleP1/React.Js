@@ -1,32 +1,34 @@
 import './NavBar.css';
 import { CartWidget } from '../CartWidget/CartWidget';
 import logo from '../../assets/images/logo.jpg';
-import {Link, NavLink} from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export function NavBar() {
 
+
+
   return (
-   <>
+    <header>
       <nav className="App__nav">
-      <Link to='/'>
-        <img className="logo" src= {logo} alt="logo"/>
-      </Link>
+        <Link to='/'>
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
         <ul>
-            <NavLink to='/category/Bicicletas'>
+          <NavLink activeClassName='nav__link' to='/category/Bicicletas'>
             <li>Bicicletas</li>
-            </NavLink>
-            <NavLink to='category/Monopatines'>
+          </NavLink>
+          <NavLink activeClassName='nav__link' to='/category/Monopatines'>
             <li>Monopatines</li>
-            </NavLink>
-            <NavLink to='category/MotosElectricas'>
+          </NavLink>
+          <NavLink activeClassName='nav__link' to='/category/MotosElectricas'>
             <li>motos electricas</li>
-            </NavLink>
-            <NavLink to='category/Accesorios'>
+          </NavLink>
+          <NavLink activeClassName='nav__link' to='/category/Accesorios'>
             <li>Accesorios</li>
-            </NavLink>
+          </NavLink>
         </ul>
         <CartWidget />
       </nav>
-      </>
+    </header>
   );
 }

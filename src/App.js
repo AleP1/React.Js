@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import {NoMatch} from './components/NoMatch/NoMatch';
+import { NoMatch } from './components/NoMatch/NoMatch';
+import { CartPage } from './components/CartPage/cartPage';
 
 export const App = () => {
     return (
@@ -17,17 +18,19 @@ export const App = () => {
                     <Route exact path="/">
                         <ItemListContainer />
                     </Route>
-                    <Route path="/category/:Id">
+                    <Route path="/category/:categoryId">
                         <ItemListContainer />
                     </Route>
-                    <Route path="/Item/:Id">
+                    <Route path="/item/:Id">
                         <ItemDetailContainer />
                     </Route>
-                </main>
-                    <Route path="*">
-                        <NoMatch />
+                    <Route path='/cart'>
+                        <CartPage />
                     </Route>
-                
+                </main>
+                <Route path="*">
+                    <NoMatch />
+                </Route>
             </Switch>
         </Router>
     );

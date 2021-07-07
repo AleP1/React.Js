@@ -1,39 +1,34 @@
+/* eslint-disable no-undef */
 
-import {useState, useEffect} from "react"
-import {ItemList} from "../ItemList/ItemLIst"
+import { useState, useEffect } from "react"
+import { useParams } from 'react-router'
+import { ItemList } from "../ItemList/ItemLIst"
 import catalogoJson from "../../data/catalogo.json"
 
-export const ItemListContainer =()=>{
+export const ItemListContainer = () => {
 
     const [catalogo, setCatalogo] = useState([])
+    const { categoryId } = useParams()
 
+    useEffect(() => {
 
-    useEffect(()=>{
-
-        const nuevaPromesa = new Promise((res, rej)=>{
+        const nuevaPromesa = new Promise((resolve, rejected) => {
             setTimeout(() => {
-                res (catalogoJson)
+                resolve(catalogoJson)
             }, 2000)
         })
-        nuevaPromesa.then((res)=>{
-            console.log(res)
-            setCatalogo(res)
+        nuevaPromesa.then((resolve) => {
+            console.log(resolve)
+            const catalogoId = categoryId ? catalogoJson.filter((item) => item.categoryId === categoryId) : catalogoJson
+            setCatalogo(catalogoId)
         })
-        //nuevaPromesa.then((res)=>{
-           // res.filter(categotyId)
-           // console.log(`La categoria del producto es ${categotyId}`)
-       // })
-        //nuevaPromesa.reject((err)=>{
-          //  alert("no se encontró el producto")
-        //})
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-},[])
+    }, [categoryId])
 
-    return(
-        <>
-            <ItemList items={catalogo}/>
-        </>
+    return (
+        <section>
+            <ItemList items={catalogo} />
+        </section>
 
     )
 }

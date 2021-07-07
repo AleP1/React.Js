@@ -16,6 +16,12 @@ export function ItemCount({ stock, inicial, onAdd }) {
     }
   }
 
+  const gracias = () => {
+    if(inicial2 > 0) {
+        alert("Gracias por tu compra")
+    }
+  }
+
   return (
     <div>
       <section className="count">
@@ -24,7 +30,7 @@ export function ItemCount({ stock, inicial, onAdd }) {
           <li>{inicial2}</li>
           <li><button onClick={suma}>+</button></li>
         </ul>
-          <button className="count__button"  onClick={onAdd}>Agregar al carrito</button>
+          <button type="submit" className="count__button"  value="inicial2" onClick={gracias}>Agregar al carrito</button>
 
       </section>
     </div>

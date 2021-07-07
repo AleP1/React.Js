@@ -14,16 +14,16 @@ export function NavBar() {
           <img className="logo" src={logo} alt="logo" />
         </Link>
         <ul>
-          <NavLink activeClassName='nav__link' to='/category/Bicicletas'>
+          <NavLink activeClassName='nav__link' to='/category/bicicletas'>
             <li>Bicicletas</li>
           </NavLink>
-          <NavLink activeClassName='nav__link' to='/category/Monopatines'>
+          <NavLink activeClassName='nav__link' to='/category/monopatines'>
             <li>Monopatines</li>
           </NavLink>
-          <NavLink activeClassName='nav__link' to='/category/MotosElectricas'>
+          <NavLink activeClassName='nav__link' to='/category/motoselectricas'>
             <li>motos electricas</li>
           </NavLink>
-          <NavLink activeClassName='nav__link' to='/category/Accesorios'>
+          <NavLink activeClassName='nav__link' to='/category/accesorios'>
             <li>Accesorios</li>
           </NavLink>
         </ul>

@@ -1,39 +1,31 @@
-import "./ItemDetail.css"
-import { Link } from 'react-router-dom'
-import { useState } from "react"
-import { ItemCount } from "../itemCount/ItemCount"
+import "../item/Item.css"
+import {ItemCount} from "../itemCount/ItemCount"
+import { Link } from 'react-router-dom';
+import {useState} from 'react'
 
 export const ItemDetail = ({ item }) => {
-    console.log(item)
+    const [change, setChange] = useState(false)
+    const [quantity, setQuantity] = useState()
 
-    const { title, price, pictureUrl, categoryId, description, stock } = item
-    const [cantidadComprada, setCantidadComprada] = useState(0)
-    const [precioCompra, setPrecioCompra] = useState(0)
-
-    const onAdd = (quantityToAdd) => {
-        setCantidadComprada(quantityToAdd.target.value)
-        setPrecioCompra((quantityToAdd.target.value) * price)
-        document.getElementById("Buying").style.display = "none"
-        document.getElementById("Buyed").style.display = "block"
+    const onAdd = (e) => {
+        const quantityToAdd = parseInt(e.target.value)
+        setQuantity(quantityToAdd)
+        setChange(true)
+        console.log(quantity)
     }
 
     return (
-        <div className="card">
-            <img className="card__img" src={pictureUrl} alt="fotito" />
-            <p className="card__title">{title}</p>
-            <p className="card__price">{price}</p>
-            <p className="card__des">{description}</p>
-            <p>stock: {stock}</p>
-            <p>{categoryId}</p>
-            <div id="Buying">
-                <ItemCount stock={stock} onAdd={onAdd} />
-                <p className="stockAlert">¡Quedan {stock} unidades!</p>
-            </div>
-            <div id="Buyed" style={{ display: "none" }}>
-                <p>Estás comprando {cantidadComprada} {title} por ${precioCompra}</p>
-                <Link to={'/cart'}><button>Terminar mi compra</button></Link>
-            </div>
-        </div>
+        <article className="card">
+            <img className="card__img" src={item.pictureUrl} alt="fotito"/>
+            <p className="card__title">{item.title}</p>
+            <p className="card__price">{item.price}</p>
+            <p className="card__des">{item.description}</p>
+            {!change && <ItemCount stock={item.stock} inicial={1} onAdd={onAdd}/>}
+            {change && <Link to="/cart">
+             <button
+              type="submit"
+              className="count__button">Termina tu compra</button>
+             </Link>}
+        </article>
     )
-
 }

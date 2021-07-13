@@ -10,7 +10,7 @@ export function NavBar() {
   return (
     <header>
       <nav className="App__nav">
-        <Link to='/'>
+        <Link className="logo__link" to='/'>
           <img className="logo" src={logo} alt="logo" />
         </Link>
         <ul>

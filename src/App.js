@@ -14,6 +14,7 @@ export const App = () => {
                 <NavBar />
             </header>
             <Switch>
+                    <React.Fragment>
                 <main>
                     <Route exact path="/">
                         <ItemListContainer />
@@ -21,13 +22,14 @@ export const App = () => {
                     <Route path="/category/:categoryId">
                         <ItemListContainer />
                     </Route>
-                    <Route path="/item/:Id">
-                        <ItemDetailContainer />
-                    </Route>
+                        <Route path="/item/:id">
+                            <ItemDetailContainer />
+                        </Route>
                     <Route path='/cart'>
                         <CartPage />
                     </Route>
                 </main>
+                    </React.Fragment>
                 <Route path="*">
                     <NoMatch />
                 </Route>

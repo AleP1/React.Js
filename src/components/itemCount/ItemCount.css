@@ -1,5 +1,4 @@
 .count {
-  margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +9,10 @@
 }
 
 .count .count__list {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
   list-style-type: none;
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,15 +20,27 @@
 
 .count .count__list li {
   font-size: 30px;
-  background: white;
   padding: 25px;
 }
 
+.count .count__list li button {
+  font-size: 35px;
+  border: 0;
+  background-color: white;
+}
+
 .count .count__button {
+  letter-spacing: 1px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
   background-color: #3483fa;
   margin-right: auto;
   margin-left: auto;
   padding: 10px 30px;
   border-radius: 5%;
+}
+
+.count .count__finish {
+  display: none;
 }
 /*# sourceMappingURL=ItemCount.css.map */

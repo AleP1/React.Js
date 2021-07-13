@@ -1,38 +1,45 @@
+a{
+  text-decoration: none;
+  text-decoration-line: none !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 320px;
+  height: 300px;
   border: solid 2px black;
   padding: 10px;
-  width: 50%;
   max-width: 300px;
   margin: 10px;
   border-radius: 10px;
   .card__img{
-    height: 1.8rem;
+    margin: 0;
+    height: 145px;
     width: 90%;
     max-width: 180px;
     margin-left: auto;
     margin-right: auto;
-
   }
   .card__title{
-
+    margin: 2px;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 24px;
   }
   .card__price{
+    margin: 5px;
     padding: 5px;
     text-align: center;
     font-size: 1.4rem;
   }
-  .card__des{
-    text-align: center;
-    font-size: 1rem;
-  }
 }
 
-link{
-  text-decoration-style: none;
+.card:hover{
+  opacity: 0.8;
+  border-radius: 20px;
 }

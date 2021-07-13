@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import "./ItemDetailContainer.css"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
@@ -9,26 +10,25 @@ export const ItemDetailContainer = () => {
     const {id} = useParams()
     const [item, setItem] = useState([])
 
-    useEffect(() => {
-        const getItems = new Promise((resolve, rejected) => {
-                setTimeout(() => {
-                    resolve(catalogoJson)
-            }, 2000)
-            })
-                getItems.then((resolve) => {
-                console.log(resolve)
-                const itemId = id ? catalogoJson.filter((item) => item.id === id) : catalogoJson
-                setItem(itemId)
-            })
-    }, [id])
+    useEffect(() =>{
 
+        const filterPromise = new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                resolve(catalogoJson)
+
+            }, 2000)
+        })
+        filterPromise.then((response) =>{
+            setItem(response.find(prod => prod.id == id))
+        })
+    }, [id])
+    console.log(`el id es ${id}`)
 
     return (
-        <section>
-            <ItemDetail item={item} />
-        </section>
+        <div>
+            <ItemDetail key={id} item={item}/>
+        </div>
 
     )
-
 
 }

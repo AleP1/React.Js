@@ -6,25 +6,34 @@ $meliBackground: #3483fa;
 }
 
 .count {
-  margin-top: 0;
   display: flex;
   flex-direction: column;
- 
+
   .count__list {
+    padding-inline-start: 0;
     list-style-type: none;
+    text-decoration: none;
     display: flex;
     li {
       font-size: 30px;
-      background: white;
       padding: 25px;
+      button{
+        font-size: 35px;
+        border: 0;
+        background-color: white;
+      }
     }
   }
   .count__button{
+    letter-spacing: 1px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    color: white;
     background-color: $meliBackground;
     @include margenes;
     padding: 10px 30px;
     border-radius: 5%;
   }
-
-  
+  .count__finish{
+    display: none;
+  }
 }

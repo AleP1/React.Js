@@ -5,28 +5,30 @@
   align-items: center;
   padding: 30px 30px;
 
-  .logo {
-    width: 130px;
-    border-radius: 50%;
+  .logo__link {
+    margin: 0;
+    .logo {
+      width: 130px;
+      border-radius: 50%;
+    }
   }
   ul {
     display: flex;
     padding: 10px;
   }
 
-    li {
-      list-style: none;
-      padding: 10px;
-      text-decoration: none;
-      font-size: 18px;
-      font-family: bolt, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  li {
+    list-style: none;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: bolt, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
   }
 
-
-.nav__link {
-  text-decoration: none;
-  color: peru;
-  font-size: 16px;
-  font-family: bold;
-}
+  .nav__link {
+    text-decoration: none;
+    color: peru;
+    font-size: 16px;
+    font-family: bold;
+  }
 }

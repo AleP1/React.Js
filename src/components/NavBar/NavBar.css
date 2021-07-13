@@ -15,7 +15,11 @@
   padding: 30px 30px;
 }
 
-.App__nav .logo {
+.App__nav .logo__link {
+  margin: 0;
+}
+
+.App__nav .logo__link .logo {
   width: 130px;
   border-radius: 50%;
 }

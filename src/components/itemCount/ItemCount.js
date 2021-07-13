@@ -1,4 +1,5 @@
 import './ItemCount.css';
+
 import { useState } from 'react';
 
 export function ItemCount({ stock, inicial, onAdd }) {
@@ -13,14 +14,10 @@ export function ItemCount({ stock, inicial, onAdd }) {
   const suma = () => {
     if (inicial2 <= stock) {
       setInicial2(inicial2 + 1);
+      console.log(typeof(inicial2))
     }
   }
 
-  const gracias = () => {
-    if(inicial2 > 0) {
-        alert("Gracias por tu compra")
-    }
-  }
 
   return (
     <div>
@@ -30,8 +27,11 @@ export function ItemCount({ stock, inicial, onAdd }) {
           <li>{inicial2}</li>
           <li><button onClick={suma}>+</button></li>
         </ul>
-          <button type="submit" className="count__button"  value="inicial2" onClick={gracias}>Agregar al carrito</button>
-
+          {<button
+          type="submit"
+          className="count__button"
+          value="inicial2"
+          onClick={onAdd}>Agregar al carrito </button>}
       </section>
     </div>
   );

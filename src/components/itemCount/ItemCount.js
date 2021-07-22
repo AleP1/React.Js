@@ -14,7 +14,6 @@ export function ItemCount({ stock, inicial, onAdd }) {
   const suma = () => {
     if (inicial2 <= stock) {
       setInicial2(inicial2 + 1);
-      console.log(typeof(inicial2))
     }
   }
 
@@ -30,7 +29,7 @@ export function ItemCount({ stock, inicial, onAdd }) {
           {<button
           type="submit"
           className="count__button"
-          value="inicial2"
+          value={inicial2}
           onClick={onAdd}>Agregar al carrito </button>}
       </section>
     </div>

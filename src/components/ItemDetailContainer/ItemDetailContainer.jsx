@@ -19,10 +19,10 @@ export const ItemDetailContainer = () => {
             }, 2000)
         })
         filterPromise.then((response) =>{
-            setItem(response.find(prod => prod.id == id))
+            setItem(response.find(prod => prod.id === parseInt(id)))
         })
     }, [id])
-    console.log(`el id es ${id}`)
+    console.log(`setItem: ${item}`)
 
     return (
         <div>

@@ -20,6 +20,7 @@ export const ItemListContainer = () => {
         nuevaPromesa.then((resolve) => {
             const catalogoId = categoryId ? catalogoJson.filter((item) => item.categoryId === categoryId) : catalogoJson
             setCatalogo(catalogoId)
+            console.log(categoryId)
         })
 
     }, [categoryId])

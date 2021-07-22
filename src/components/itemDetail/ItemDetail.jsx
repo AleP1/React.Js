@@ -1,17 +1,18 @@
 import "../item/Item.css"
 import {ItemCount} from "../itemCount/ItemCount"
 import { Link } from 'react-router-dom';
-import {useState} from 'react'
+import {useContext, useState} from 'react'
+import { CartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
     const [change, setChange] = useState(false)
-    const [quantity, setQuantity] = useState()
+    const { setQuantity, addItem }= useContext(CartContext)
 
-    const onAdd = (e) => {
+    const handlerAdd = (e) => {
         const quantityToAdd = parseInt(e.target.value)
         setQuantity(quantityToAdd)
+        addItem(item)
         setChange(true)
-        console.log(quantity)
     }
 
     return (
@@ -20,11 +21,12 @@ export const ItemDetail = ({ item }) => {
             <p className="card__title">{item.title}</p>
             <p className="card__price">{item.price}</p>
             <p className="card__des">{item.description}</p>
-            {!change && <ItemCount stock={item.stock} inicial={1} onAdd={onAdd}/>}
+            {!change && <ItemCount stock={item.stock} inicial={1} onAdd={handlerAdd}/>}
             {change && <Link to="/cart">
              <button
               type="submit"
-              className="count__button">Termina tu compra</button>
+              className="count__button"
+              onClick={addItem}>Termina tu compra</button>
              </Link>}
         </article>
     )

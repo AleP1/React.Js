@@ -9,10 +9,9 @@ export const CartPage = () => {
         cart.length ?
         <div>
             <div className="Cart__List">
-                {cart.map(product=>{
+                {cart.map((product, index) => {
                     return (
-                        <div key={product.id}>
-                            <img src={product.pictureURL} alt={product.title} />
+                      <div key={index}>
                             <h3>{product.title}</h3>
                             <span>Subtotal: {product.price * product.quantity}</span><br />
                             <span>Cantidad: {product.quantity}</span>
@@ -22,12 +21,12 @@ export const CartPage = () => {
                 })}
             </div>
             <div className="Cart__Footer">
-                <button onClick={clear}>Carrito vacio</button>
+                <button onClick={clear}>Vaciar carrito</button>
             </div>
         </div>
     :
         <div>
-            No hay productos para comprar
+            Nada por aqu!
             <Link to='/'>Ir a inicio</Link>
         </div>      )
 }

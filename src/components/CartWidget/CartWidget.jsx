@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 export function CartWidget() {
   const { counter } = useContext(CartContext)
-  console.log(`counter es ${counter}`)
 
   return (
     <Link to="/cart">

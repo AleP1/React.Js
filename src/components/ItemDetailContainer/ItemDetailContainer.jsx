@@ -22,7 +22,6 @@ export const ItemDetailContainer = () => {
             setItem(response.find(prod => prod.id === parseInt(id)))
         })
     }, [id])
-    console.log(`setItem: ${item}`)
 
     return (
         <div>

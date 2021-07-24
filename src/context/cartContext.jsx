@@ -13,15 +13,13 @@ export const CartProvider = ({ children }) => {
         if (!isInCart) {
             //Agrega un nuevo producto al carrito
             const enterItem = {
-                item: {
-                    id: item.id,
-                    title: item.title,
-                    price: item.price
-                },
-                quantity: quantity
+            item: {
+                ...item
+            },
+            quantity: quantity
             }
-            console.log(`quantity es ${quantity}`)
             setCart([...cart, enterItem])
+
         } else {
             cart.forEach(product => {
                 if (product.id === item.id) {
@@ -52,6 +50,9 @@ export const CartProvider = ({ children }) => {
         cartCounter()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart])
+    
+    console.log(`en context: ${cart.length}`)
+
 
     return (
         <CartContext.Provider value={{

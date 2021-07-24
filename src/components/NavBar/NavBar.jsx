@@ -1,9 +1,24 @@
 import './NavBar.css';
 import { CartWidget } from '../CartWidget/CartWidget';
 import logo from '../../assets/images/logo.jpg';
+import { CartContext } from '../../context/cartContext';
 import { Link, NavLink } from 'react-router-dom'
+import { useContext, useState, useEffect } from 'react';
 
 export function NavBar() {
+  const { cart } = useContext(CartContext)
+  const [change, setChange] = useState(false)
+
+
+  useEffect(() =>{
+    if(cart.length > 0){
+      setChange(true)
+    } else {
+      setChange(false)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart])
+
 
 
 
@@ -27,7 +42,10 @@ export function NavBar() {
             <li>Accesorios</li>
           </NavLink>
         </ul>
-        <CartWidget />
+
+         { change && <CartWidget/>}
+         { !change && <> </>}
+
       </nav>
     </header>
   );

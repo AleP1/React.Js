@@ -1,7 +1,7 @@
 [{
     "id": 1,
     "title": "Bicicleta",
-    "price": "$50000",
+    "price": 50000,
     "description": "Es una bici plegable",
     "pictureUrl": "https://falabella.scene7.com/is/image/FalabellaAR/2634820_1?wid=800&hei=800&qlt=70",
     "categoryId": "bicicletas",
@@ -10,7 +10,7 @@
 {
     "id": 2,
     "title": "casco",
-    "price": "$40000",
+    "price": 40000,
     "description": "Es un casco",
     "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_836647-MLA41971928650_052020-W.webp",
     "categoryId": "accesorios",
@@ -19,7 +19,7 @@
 {
     "id": 3,
     "title": "monopatin",
-    "price": "$30000",
+    "price": 30000,
     "description": "Es un monopatin",
     "pictureUrl": "https://m.media-amazon.com/images/I/41xWtRvgpVL.jpg",
     "categoryId": "monopatines",
@@ -28,7 +28,7 @@
 {
     "id": 4,
     "title": "Bicicleta",
-    "price": "$75000",
+    "price": 75000,
     "description": "Es una mountain bike",
     "pictureUrl": "https://www.seguroscatalanaoccidente.com/blog/assets/multimedia/2016/04/bicicleta-fixie.jpg",
     "categoryId": "bicicletas",
@@ -37,7 +37,7 @@
 {
     "id": 5,
     "title": "casco",
-    "price": "$7500",
+    "price": 7500,
     "description": "Es un casco",
     "pictureUrl": "https://labicikleta.com/wp-content/uploads/2016/08/BikeHelmetWhiteBackground1600-770x513.jpg",
     "categoryId": "accesorios",
@@ -46,7 +46,7 @@
 {
     "id": 6,
     "title": "monopatin",
-    "price": "$86500",
+    "price": 86500,
     "description": "Es un monopatin",
     "pictureUrl": "https://http2.mlstatic.com/D_NQ_NP_606375-MLA43184150283_082020-O.webp",
     "categoryId": "monopatines",
@@ -55,7 +55,7 @@
 {
     "id": 7,
     "title": "monopatin",
-    "price": "$30000",
+    "price": 30000,
     "description": "Es un monopatin",
     "pictureUrl": "https://m.media-amazon.com/images/I/41xWtRvgpVL.jpg",
     "categoryId": "monopatines",

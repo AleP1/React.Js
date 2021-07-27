@@ -6,14 +6,16 @@ import { CartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
     const [change, setChange] = useState(false)
-    const { setQuantity, addItem }= useContext(CartContext)
+    const { setItemSelected, setQuantity, addItem }= useContext(CartContext)
 
     const handlerAdd = (e) => {
         const quantityToAdd = parseInt(e.target.value)
         setQuantity(quantityToAdd)
-        addItem(item)
+        setItemSelected(item)
         setChange(true)
+        //console.log(`${setItemSelected}`)
     }
+
 
     return (
         <article className="card">

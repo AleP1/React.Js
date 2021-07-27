@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import CatalogoJson from '../data/catalogo.json'
+//import CatalogoJson from '../data/catalogo.json'
 
 export const CartContext = createContext()
 
@@ -7,22 +7,20 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [counter, setCounter] = useState(0)
     const [quantity, setQuantity] = useState(0)
+    const [itemSelected, setItemSelected] = useState([])
+    const [total, setTotal] = useState(0)
 
-    const addItem = (item) => {
-        const isInCart = CatalogoJson.some(product => product.id === item.id)
+    const addItem = () => {
+        const isInCart = cart.some(product => product.itemSelected.id === itemSelected.id)
+        console.log(`${isInCart}`)
+        console.log(`${itemSelected.id}`)
+
         if (!isInCart) {
-            //Agrega un nuevo producto al carrito
-            const enterItem = {
-            item: {
-                ...item
-            },
-            quantity: quantity
-            }
-            setCart([...cart, enterItem])
+        setCart([...cart, {itemSelected, quantity}])////////console.log(`entro por aqui`)
 
         } else {
             cart.forEach(product => {
-                if (product.id === item.id) {
+                if (product.itemSelected.id === itemSelected.id) {
                     return product.quantity += quantity
                 }
             })
@@ -35,30 +33,42 @@ export const CartProvider = ({ children }) => {
     }
 
     const removeItem = (id) => {
-        const filteredCart = cart.filter((item) => item.id !== id)
+        console.log(`${id}`)
+        const filteredCart = cart.filter((product) => product.itemSelected.id !== id)
         setCart(filteredCart)
     }
 
     const cartCounter = () => {
-        let total = 0
+        let subtotal = 0
         if (cart.length > 0) {
-            cart.forEach((item) => { total += item.quantity })
+            cart.forEach(() => { subtotal += quantity })
         }
-        setCounter(total)
+        setCounter(subtotal)
     }
+
+    const counterTotal = () => {
+        let sum = 0
+        if (cart.length > 0) {
+            cart.forEach((product) => { sum += ( product.itemSelected.price * quantity) })
+        }
+        setTotal(sum)
+    }
+
+
     useEffect(() => {
         cartCounter()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        counterTotal()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart])
-    
-    console.log(`en context: ${cart.length}`)
 
 
     return (
         <CartContext.Provider value={{
             cart,
+            total,
             counter,
             setQuantity,
+            setItemSelected,
             addItem,
             clear,
             removeItem

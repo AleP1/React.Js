@@ -1,32 +1,46 @@
-/* eslint-disable eqeqeq */
 import "./ItemDetailContainer.css"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { ItemDetail } from "../itemDetail/ItemDetail"
-import catalogoJson from "../../data/catalogo.json"
+import { projectFirestore as dataBase } from '../../firebase/firebase'
 
 export const ItemDetailContainer = () => {
 
-    const {id} = useParams()
+    const { id } = useParams()
     const [item, setItem] = useState([])
+    const [loading, setLoading] = useState(false)
 
-    useEffect(() =>{
+    useEffect(() => {
+        setLoading(true)
+        const db = dataBase
+        const itemCollection = db.collection("1")
+        const collectionToShow = itemCollection.doc(id)
 
-        const filterPromise = new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                resolve(catalogoJson)
-
-            }, 2000)
+        collectionToShow.get().then(doc => {
+            if (!doc.exists) {
+                console.log('Item does not exist! :(')
+                return
+            }
+            console.log('Item found!')
+            setItem({ id: doc.id, ...doc.data() })
+            console.log(`item ${item.id}`)
+        }).catch((error) => {
+            console.log("Error searching items", error)
+        }).finally(() => {
+            setLoading(false)
         })
-        filterPromise.then((response) =>{
-            setItem(response.find(prod => prod.id === parseInt(id)))
-        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
+
     return (
-        <div>
-            <ItemDetail key={id} item={item}/>
-        </div>
+
+        loading
+            ? <div>Loading...</div>
+            : <div>
+                <ItemDetail key={id} item={item} />
+            </div>
+
 
     )
 

@@ -1,16 +1,45 @@
-/* eslint-disable no-undef */
-
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router'
 import { ItemList } from "../ItemList/ItemLIst"
-import catalogoJson from "../../data/catalogo.json"
+import { projectFirestore as dataBase } from '../../firebase/firebase'
 
 export const ItemListContainer = () => {
 
-    const [catalogo, setCatalogo] = useState([])
+    //const [catalogo, setCatalogo] = useState([])
+    const [items, setItems] = useState([])
     const { categoryId } = useParams()
+    //const [category, setCategory] = useState()
+    const [loading, setLoading] = useState(false)
+
 
     useEffect(() => {
+        setLoading(true)
+        console.log(`${loading}`)
+        const db = dataBase
+        const itemCollection = db.collection("1")
+        const collectionToShow = categoryId ? itemCollection.where('categoryId', '==', categoryId) : itemCollection
+        console.log(`collectionToShow es ${collectionToShow}`)
+        collectionToShow.get().then((querySnapshot) => {
+            if (querySnapshot.size === 0) {
+                console.log('No results!')
+            }
+            setItems(querySnapshot.docs.map(doc => {
+                return {
+                    id: doc.id,
+                    ...doc.data()
+                }
+            }))
+            console.log(`${loading}`)
+        }).catch((error) => {
+            console.log("Error searching items", error)
+        }).finally(() => {
+            setLoading(false)
+        })
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [categoryId])
+
+    /*useEffect(() => {
 
         const nuevaPromesa = new Promise((resolve, rejected) => {
             setTimeout(() => {
@@ -22,11 +51,11 @@ export const ItemListContainer = () => {
             setCatalogo(catalogoId)
         })
 
-    }, [categoryId])
+    }, [categoryId])*/
 
     return (
         <section>
-            <ItemList items={catalogo} />
+            <ItemList items={items} hasLoaded={loading} />
         </section>
 
     )

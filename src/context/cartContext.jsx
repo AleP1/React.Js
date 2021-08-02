@@ -38,7 +38,7 @@ export const CartProvider = ({ children }) => {
         setCart(filteredCart)
     }
 
-    const cartCounter = () => {
+    const cartSubTotal = () => {
         let subtotal = 0
         if (cart.length > 0) {
             cart.forEach(() => { subtotal += quantity })
@@ -47,16 +47,17 @@ export const CartProvider = ({ children }) => {
     }
 
     const counterTotal = () => {
-        let sum = 0
-        if (cart.length > 0) {
-            cart.forEach((product) => { sum += ( product.itemSelected.price * quantity) })
-        }
-        setTotal(sum)
+        const nextTotal = cart
+        .map(({ item, quantity}) => item.price * quantity)
+        .reduce(
+            (cartTotalPrice, currentItemPrice) => cartTotalPrice + currentItemPrice
+        )
+        setTotal(nextTotal)
     }
 
 
     useEffect(() => {
-        cartCounter()
+        cartSubTotal()
         counterTotal()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart])

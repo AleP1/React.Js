@@ -15,10 +15,10 @@ export const ItemDetail = ({ item }) => {
         setChange(true)
         //console.log(`${setItemSelected}`)
     }
-
+    
 
     return (
-        <article className="card">
+        <article className="card" key={item.id}>
             <img className="card__img" src={item.pictureUrl} alt="fotito"/>
             <p className="card__title">{item.title}</p>
             <p className="card__price">{item.price}</p>

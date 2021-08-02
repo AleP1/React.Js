@@ -10,6 +10,13 @@ export function NavBar() {
   const [change, setChange] = useState(false)
 
 
+
+
+
+
+
+  
+
   useEffect(() =>{
     if(cart.length > 0){
       setChange(true)

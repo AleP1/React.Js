@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+*{
+  font-family: 'Josefin Sans', sans-serif !important;
+}
 main {
-  height: 100vh;
+  max-height: 1000px;
+  width: 100%;
   border: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+.app{
+  width: 100%;
+  min-width: 100%;
+  
+}
+
+section {
+  width: 100%;
+  min-width: 100vh;
+  position: relative;
 }

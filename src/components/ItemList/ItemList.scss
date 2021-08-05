@@ -1,7 +1,6 @@
 .itemList{
     display: flex;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+    max-width: 90vw;
     flex-wrap: wrap;
 } 

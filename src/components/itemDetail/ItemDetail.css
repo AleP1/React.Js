@@ -1,12 +1,35 @@
-.card {
+.d__card {
   height: 500px;
   border: solid 2px black;
   padding: 20px;
   width: 50%;
 }
 
-.card .card__img {
+.d__card .d__card__img {
   height: 150px;
   width: 100%;
+}
+
+.d__card .d__count__button {
+  background-color: #c2fbd7;
+  border-radius: 50px;
+  border-width: 0;
+  -webkit-box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+          box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  font-size: 1em;
+  height: 50px;
+  padding: 0 25px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.d__card .d__count__button :hover {
+  background-color: #afe6c3;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=ItemDetail.css.map */

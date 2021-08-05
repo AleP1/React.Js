@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  margin: 0;
+  padding: 0;
+}
+
 .App__nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,9 +48,10 @@
 }
 
 .App__nav .nav__link {
-  text-decoration: none;
+  text-decoration: underline;
   color: peru;
   font-size: 16px;
   font-family: bold;
+  border-radius: 20px;
 }
 /*# sourceMappingURL=NavBar.css.map */

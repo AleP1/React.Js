@@ -5,10 +5,8 @@ import { projectFirestore as dataBase } from '../../firebase/firebase'
 
 export const ItemListContainer = () => {
 
-    //const [catalogo, setCatalogo] = useState([])
     const [items, setItems] = useState([])
     const { categoryId } = useParams()
-    //const [category, setCategory] = useState()
     const [loading, setLoading] = useState(false)
 
 
@@ -18,7 +16,6 @@ export const ItemListContainer = () => {
         const db = dataBase
         const itemCollection = db.collection("1")
         const collectionToShow = categoryId ? itemCollection.where('categoryId', '==', categoryId) : itemCollection
-        console.log(`collectionToShow es ${collectionToShow}`)
         collectionToShow.get().then((querySnapshot) => {
             if (querySnapshot.size === 0) {
                 console.log('No results!')
@@ -38,20 +35,6 @@ export const ItemListContainer = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [categoryId])
-
-    /*useEffect(() => {
-
-        const nuevaPromesa = new Promise((resolve, rejected) => {
-            setTimeout(() => {
-                resolve(catalogoJson)
-            }, 2000)
-        })
-        nuevaPromesa.then((resolve) => {
-            const catalogoId = categoryId ? catalogoJson.filter((item) => item.categoryId === categoryId) : catalogoJson
-            setCatalogo(catalogoId)
-        })
-
-    }, [categoryId])*/
 
     return (
         <section>

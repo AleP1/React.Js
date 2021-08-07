@@ -6,6 +6,7 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { NoMatch } from './components/NoMatch/NoMatch';
 import { CartPage } from './components/CartPage/cartPage';
+import { Login } from './components/login/Login';
 
 export const App = () => {
 
@@ -14,23 +15,26 @@ export const App = () => {
             <header className="App-header">
                 <NavBar />
             </header>
-                <Switch>
-                        <Route exact path="/">
-                            <ItemListContainer />
-                        </Route>
-                        <Route path="/category/:categoryId">
-                            <ItemListContainer />
-                        </Route>
-                        <Route path="/item/:id">
-                            <ItemDetailContainer />
-                        </Route>
-                        <Route path='/cart'>
-                            <CartPage />
-                        </Route>
-                    <Route path="*">
-                        <NoMatch />
-                    </Route>
-                </Switch>
+            <Switch>
+                <Route exact path="/">
+                    <ItemListContainer />
+                </Route>
+                <Route path="/category/:categoryId">
+                    <ItemListContainer />
+                </Route>
+                <Route path="/item/:id">
+                    <ItemDetailContainer />
+                </Route>
+                <Route path='/cart'>
+                    <CartPage />
+                </Route>
+                <Route exact path="/login">
+                    <Login />
+                </Route>
+                <Route path="*">
+                    <NoMatch />
+                </Route>
+            </Switch>
         </Router>
     );
 }

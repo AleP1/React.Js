@@ -19,7 +19,6 @@ export function ItemCount({ stock, inicial, onAdd }) {
 
 
   return (
-    <div>
       <section className="count">
         <ul className="count__list">
           <li><button onClick={resta}>-</button></li>
@@ -30,8 +29,7 @@ export function ItemCount({ stock, inicial, onAdd }) {
           type="submit"
           className="count__button"
           value={inicial2}
-          onClick={onAdd}>Agregar al carrito </button>}
+          onClick={onAdd}>AGREGAR AL CARRITO </button>}
       </section>
-    </div>
   );
 }

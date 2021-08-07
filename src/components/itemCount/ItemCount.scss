@@ -6,9 +6,12 @@ $meliBackground: #3483fa;
 }
 
 .count {
-  display: flex;
+  display: inline;
   flex-direction: column;
-
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
   .count__list {
     padding-inline-start: 0;
     list-style-type: none;

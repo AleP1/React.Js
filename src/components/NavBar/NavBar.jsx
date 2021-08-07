@@ -9,33 +9,21 @@ export function NavBar() {
   const { cart } = useContext(CartContext)
   const [change, setChange] = useState(false)
 
-
-
-
-
-
-
-  
-
-  useEffect(() =>{
-    if(cart.length > 0){
+  useEffect(() => {
+    if (cart.length > 0) {
       setChange(true)
     } else {
       setChange(false)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart])
 
-
-
-
   return (
-    <header>
       <nav className="App__nav">
         <Link className="logo__link" to='/'>
           <img className="logo" src={logo} alt="logo" />
         </Link>
-        <ul>
+        <ul className="nav__bar">
           <NavLink activeClassName='nav__link' to='/category/bicicletas'>
             <li>Bicicletas</li>
           </NavLink>
@@ -49,11 +37,13 @@ export function NavBar() {
             <li>Accesorios</li>
           </NavLink>
         </ul>
-
-         { change && <CartWidget/>}
-         { !change && <> </>}
-
+        <div className="nav__bar">
+          <NavLink activeClassName='nav__link' to='/login'>
+            <li>Login</li>
+          </NavLink>
+          {change && <CartWidget />}
+          {!change && <> </>}
+        </div>
       </nav>
-    </header>
   );
 }

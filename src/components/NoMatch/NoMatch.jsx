@@ -1,9 +1,13 @@
-export const NoMatch =()=>{
+import React from 'react';
 
-    return(
-        <div >
-           <h1>La pagina no existe!</h1>
-        </div>
-    )
+const NoMatch = () => {
 
-}
+  return (
+    <div>
+      <h1>La pagina no existe!</h1>
+    </div>
+  );
+
+};
+
+export default NoMatch;
